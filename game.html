@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍯</text></svg>">
+    <title>Honey Tiles | Game</title>
+
+    <!-- Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/game.css" type="text/css"> 
+    
+    <!-- Scripts -->
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/navigations.js" defer></script>
+</head>
+
+
+<body>
+
+    <div id="mobile-menu-overlay">
+        <div class="mobile-overlay-button-wrapper">
+            <img id="rankings-comb" class="rankings-comb-menu" src="assets/rankings-comb.svg" alt="">
+            <img id="play-comb" class="play-comb-menu" src="assets/play-comb.svg" alt="">
+            <img id="settings-comb" class="settings-comb-menu" src="assets/settings-comb.svg" alt="">
+            <img id="instructions-comb" class="instructions-comb-menu" src="assets/instructions-comb.svg" alt="">
+        </div>
+    </div>
+
+    <div id="instructions-overlay">
+        <div class="instructions-card">
+            <h1>Instructions</h1>
+            <img src="assets/instructions.png" alt="">
+            <p>Tap on the colored tiles as quick as you can.</p>
+            <button id="instructions-button">Got it!</button>
+        </div>
+    </div>
+
+    <div id="game-over-overlay">
+        <div class="game-over-card">
+            <img id="game-over-logo" src="assets/logo.png" alt="">
+            <h1>Game Over!</h1>
+            <p class="game-over-p">Oupsi... You have pressed the wrong tile. Let's try it again! 🐝</p>
+            <div class="game-over-score-wrapper">
+                <h4>Your Score:</h4>
+                <p id="score-number" class="game-over-score">0</p>
+            </div>
+            <div class="button-container">
+                <img id="play-comb" class="play-comb" src="assets/play-comb.svg" alt="">
+                <img id="rankings-comb" class="rankings-comb" src="assets/rankings-comb.svg" alt="">
+                <img id="settings-comb" class="settings-comb" src="assets/settings-comb.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <img id="rankings" class="rankings-icon" src="assets/rankings.svg" alt="rankings">
+            <img id="logo" src="assets/logo.png" onclick="location.href='index.html';" alt="honey tiles logo">
+            <div class="inner-nav-wrapper">
+                <img id="instructions" class="instructions-icon" src="assets/instructions.svg" alt="instructions">
+                <img id="settings" class="settings-icon"src="assets/settings.svg" alt="settings">
+                <div id="hamburger-menu">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                    <div class="line-3"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="game-section">
+        <div class="score-container">
+             <div class="your-score-wrapper">
+                 <h2 class="score-desktop">Your Score:</h2>
+                 <h2 class="score-mobile">Score:</h2>
+                 <p id="score-number">0</p>
+             </div>
+
+             <div class="highscore-wrapper">
+                <h2>Highscore:</h2>
+                <p id="highscore-number">0</p>
+            </div>
+        </div>
+        <div class="honey-comb-container">
+            <!-- <img class="test" src="assets/honey-comb.svg"> -->
+
+            <div class="row-1">
+                <div id="0" class="honey-comb">
+                    <img id="img0" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="1" class="honey-comb">
+                    <img id="img1" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            <div class="row-2">
+                <div id="2" class="honey-comb">
+                    <img id="img2" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="3" class="honey-comb">
+                    <img id="img3" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="4" class="honey-comb">
+                    <img id="img4" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            <div class="row-3">
+                <div id="5" class="honey-comb">
+                    <img id="img5" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="6" class="honey-comb">
+                    <img id="img6" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            
+            <div class="row-4">
+                <div id="7" class="honey-comb">
+                    <img id="img7" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="8" class="honey-comb">
+                    <img id="img8" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="9" class="honey-comb">
+                    <img id="img9" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            <div class="row-5">
+                <div id="10" class="honey-comb">
+                    <img id="img10" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="11" class="honey-comb">
+                    <img id="img11" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="12" class="honey-comb">
+                    <img id="img12" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="13" class="honey-comb">
+                    <img id="img13" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            <div class="row-6">
+                <div id="14" class="honey-comb">
+                    <img id="img14" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="15" class="honey-comb">
+                    <img id="img15" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="16" class="honey-comb">
+                    <img id="img16" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            <div class="row-7">
+                <div id="17" class="honey-comb">
+                    <img id="img17" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="18" class="honey-comb">
+                    <img id="img18" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            <div class="row-8">
+                <div id="19" class="honey-comb">
+                    <img id="img19" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="20" class="honey-comb">
+                    <img id="img20" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="21" class="honey-comb">
+                    <img id="img21" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+
+            <div class="row-9">
+                <div id="22" class="honey-comb">
+                    <img id="img22" src="assets/yellow.svg" alt="">
+                </div>
+                <div id="23" class="honey-comb">
+                    <img id="img23" src="assets/yellow.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+</html>

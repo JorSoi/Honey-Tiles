@@ -1,0 +1,1264 @@
+/* General/Global settings */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'DM Sans';
+    /* border: 1px solid black; */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color:#ffe4c4;
+    overflow: hidden;
+    position: relative;
+}
+
+
+#logo,
+.rankings-comb,
+.play-comb,
+.settings-comb,
+.instructions-comb,
+.rankings-comb-menu,
+.play-comb-menu,
+.settings-comb-menu,
+.instructions-comb-menu,
+.rankings-icon,
+.instructions-icon,
+.settings-icon {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    cursor: pointer;
+}
+
+
+/* Overlay styling */
+#mobile-menu-overlay,
+#instructions-overlay,
+#game-over-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: #221700be;
+    position: absolute;
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-overlay-button-wrapper {
+    width: 270px;
+    height: 190px;
+    position: relative;
+}
+
+.rankings-comb-menu,
+.play-comb-menu,
+.settings-comb-menu,
+.instructions-comb-menu {
+    width: 100px;
+    cursor: pointer;
+}
+
+.rankings-comb-menu {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.play-comb-menu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+}
+
+.settings-comb-menu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+}
+
+.instructions-comb-menu {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0px;
+}
+
+.instructions-card,
+.game-over-card {
+    max-width: 500px;
+    max-height: 900px;
+    background-color: #FFE4C4;
+    border-radius: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.instructions-card h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #543700;
+    -webkit-text-stroke: 1px #543700;
+    margin-top: 40px;
+}
+
+.instructions-card img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.instructions-card p {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    color: #9E8154;
+    font-size: 1.25rem;
+    width: 64.5%;
+}
+
+.instructions-card button {
+    width: 40%;
+    height: 55px;
+    background-color: #795303;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+
+#game-over-logo {
+    width: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    transform: translateX(10px);
+}
+
+.game-over-card h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #543700;
+    -webkit-text-stroke: 2px #543700;
+}
+
+.game-over-p {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: #9E8154;
+    font-size: 1.25rem;
+    width: 75%;
+    margin-bottom: 30px;
+}
+
+.game-over-score-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.game-over-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #543700;
+    -webkit-text-stroke: 1px #543700;
+}
+
+.game-over-score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffa600;
+    -webkit-text-stroke: 2px #ffa600;
+    margin-left: 20px;
+}
+
+.button-container {
+    margin: 0 auto;
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.button-container img {
+    max-width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Nav styling */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1880px;
+    width: 100%;
+    margin: 0 5%;
+    margin-top: 20px;
+}
+
+.rankings-icon,
+.instructions-icon,
+.settings-icon {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+#hamburger-menu {
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+    width: 100%;
+    height: 4px;
+    background-color: #543700;
+    border-radius: 100px;
+}
+
+.line-2 {
+    margin: 5px 0;
+}
+
+#logo {
+    width: 210px;
+    cursor: pointer;
+    transform: translateX(50px);
+}
+
+.inner-nav-wrapper {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* Game styling */
+.game-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 80vh;
+    margin-top: opx
+}
+
+.score-container {
+    margin-left: 5%;
+}
+
+.your-score-wrapper {
+    margin-bottom: 30px;
+}
+
+.your-score-wrapper h2,
+.highscore-wrapper h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #543700;
+    -webkit-text-stroke: 2px #543700;
+}
+
+.score-mobile {
+    display: none;
+}
+
+.your-score-wrapper p,
+.highscore-wrapper p {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #ffa600;
+    -webkit-text-stroke: 3px #ffa600;
+}
+
+.honey-comb-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    width: 771px;
+    height: 603px;
+    transform: translate(-50%, 0);
+}
+
+
+.honey-comb {
+    width: 130px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffa600;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    cursor: pointer;
+}
+
+.honey-comb img {
+    width: 109px;
+    height: 93px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    object-fit: cover;
+}
+
+
+.row-1,
+.row-2,
+.row-3,
+.row-4, 
+.row-5, 
+.row-6, 
+.row-7, 
+.row-8,
+.row-9  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.row-1 {
+    width: 345px;
+    top: 0px;
+}
+
+.row-2 {
+    width: 560px;
+    top: 63px;
+}
+
+.row-3 {
+    width: 345px;
+    top: 124px;
+}
+
+.row-4 {
+    width: 560px;
+    top: 185px;
+}
+
+.row-5 {
+    width: 770px;
+    top: 247px;
+}
+
+.row-6 {
+    width: 560px;
+    bottom: 185px;
+}
+
+.row-7 {
+    width: 345px;
+    bottom: 124px;
+}
+
+.row-8 {
+    width: 560px;
+    bottom: 63px;
+}
+
+.row-9 {
+    width: 345px;
+    bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1400px) {
+
+    .game-section,
+    .honey-comb-container {
+        all: initial;
+    
+    }
+
+    .game-section {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px; 
+    }
+
+    .honey-comb-container {
+        margin-right: 5%;
+        position: relative;
+        width: 771px;
+        height: 603px;
+    }
+
+    .score-container {
+        margin-left: 5%;
+    }
+}
+
+
+@media (max-width: 1150px) {
+   
+    .honey-comb-container {
+        width: 670px;
+        height: 527px;
+    }
+
+    .honey-comb {
+        width: 113px;
+        height: 97px;
+    }
+    
+    .honey-comb img {
+        width: 89px;
+        height: 80px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        object-fit: cover;
+    }
+
+    .row-1 {
+        width: 300px;
+        top: 0px;
+    }
+    
+    .row-2 {
+        width: 485px;
+        top: 53px;
+    }
+    
+    .row-3 {
+        width: 300px;
+        top: 107px;
+    }
+    
+    .row-4 {
+        width: 485px;
+        top: 160px;
+    }
+    
+    .row-5 {
+        width: 670px;
+        top: 214px;
+    }
+    
+    .row-6 {
+        width: 485px;
+        bottom: 165px;
+    }
+    
+    .row-7 {
+        width: 300px;
+        bottom: 111px;
+    }
+    
+    .row-8 {
+        width: 485px;
+        bottom: 57px;
+    }
+    
+    .row-9 {
+        width: 300px;
+        bottom: 4px;
+    }
+
+}
+
+@media (max-width: 1030px) {
+   
+    .game-section {
+        display: block;
+        margin-top: 40px; 
+    }
+
+    .score-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10%;
+        margin-bottom: 30px;
+    }
+    
+    .your-score-wrapper,
+    .highscore-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0px;
+    }
+
+    .your-score-wrapper h2,
+    .highscore-wrapper h2 {
+        font-size: 2.3rem;
+        -webkit-text-stroke: 1px #543700;
+    }
+
+    .your-score-wrapper p,
+    .highscore-wrapper p {
+        margin-left: 10px;
+        font-size: 3.8rem;
+        -webkit-text-stroke: 2px #ffa600;
+    }
+
+    .honey-comb-container {
+        display: flex;
+        justify-content: center;
+        margin-right: initial;
+        width: 100%;
+        height: 500px;
+    }
+
+    .honey-comb {
+        width: 108px;
+        height: 92px;
+    }
+    
+    .honey-comb img {
+        width: 85px;
+        height: 75px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        object-fit: cover;
+    }
+
+    .row-1 {
+        width: 285px;
+        top: 0px;
+    }
+    
+    .row-2 {
+        width: 463px;
+        top: 51px;
+    }
+    
+    .row-3 {
+        width: 285px;
+        top: 102px;
+    }
+    
+    .row-4 {
+        width: 463px;
+        top: 153px;
+    }
+    
+    .row-5 {
+        width: 640px;
+        top: 204px;
+    }
+    
+    .row-6 {
+        width: 463px;
+        bottom: 153px;
+    }
+    
+    .row-7 {
+        width: 285px;
+        bottom: 102px;
+    }
+    
+    .row-8 {
+        width: 463px;
+        bottom: 51px;
+    }
+    
+    .row-9 {
+        width: 285px;
+        bottom: 0px;
+    }
+}
+
+
+@media  (max-width: 670px) {
+
+    .your-score-wrapper h2,
+    .highscore-wrapper h2 {
+        font-size: 2rem;
+        -webkit-text-stroke: 1px #543700;
+    }
+
+    .your-score-wrapper p,
+    .highscore-wrapper p {
+        margin-left: 10px;
+        font-size: 3.4rem;
+        -webkit-text-stroke: 2px #ffa600;
+    }
+
+    .honey-comb-container {
+        margin-right: initial;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .honey-comb {
+        width: 93px;
+        height: 78px;
+    }
+    
+    .honey-comb img {
+        width: 78px;
+        height: 66px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        object-fit: cover;
+    }
+
+    .row-1 {
+        width: 244px;
+        top: 38px;
+    }
+    
+    .row-2 {
+        width: 395px;
+        top: 82px;
+    }
+    
+    .row-3 {
+        width: 244px;
+        top: 124px;
+    }
+    
+    .row-4 {
+        width: 395px;
+        top: 168px;
+    }
+    
+    .row-5 {
+        width: 545px;
+        top: 210px;
+    }
+    
+    .row-6 {
+        width: 395px;
+        bottom: 168px;
+    }
+    
+    .row-7 {
+        width: 244px;
+        bottom: 124px;
+    }
+    
+    .row-8 {
+        width: 395px;
+        bottom: 82px;
+    }
+    
+    .row-9 {
+        width: 244px;
+        bottom: 38px;
+    }
+}
+
+
+
+@media  (max-width: 630px) {
+
+    .rankings-icon,
+    .settings-icon,
+    .instructions-icon {
+        display: none;
+    }
+
+    #logo {
+        transform: translateX(0px);
+        width: 110px;
+    }
+
+    #hamburger-menu {
+        display: block;
+    }
+
+    .inner-nav-wrapper {
+        width: unset;
+    }
+}
+
+
+@media  (max-width: 620px) {
+
+    .your-score-wrapper h2,
+    .highscore-wrapper h2 {
+        font-size: 1.6rem;
+        -webkit-text-stroke: 1px #543700;
+    }
+
+    .your-score-wrapper p,
+    .highscore-wrapper p {
+        margin-left: 10px;
+        font-size: 2.5rem;
+        -webkit-text-stroke: 1px #ffa600;
+    }
+
+    .honey-comb-container {
+        margin-right: initial;
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+
+
+@media  (max-width: 620px) {
+
+    .your-score-wrapper h2,
+    .highscore-wrapper h2 {
+        font-size: 1.4rem;
+
+    }
+
+    .your-score-wrapper p,
+    .highscore-wrapper p {
+        font-size: 2rem;
+    }
+
+    .honey-comb-container {
+        width: 100%;
+    }
+}
+
+
+@media  (max-width: 620px) {
+
+    .score-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+
+
+
+@media (max-width: 550px) {
+    
+
+
+    .honey-comb {
+        width: 80px;
+        height: 70px;
+    }
+    
+    .honey-comb img {
+        width: 65px;
+        height: 57px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        object-fit: cover;
+    }
+
+    .row-1 {
+        width: 215px;
+        top: 60px;
+    }
+    
+    .row-2 {
+        width: 350px;
+        top: 100px;
+    }
+    
+    .row-3 {
+        width: 215px;
+        top: 138px;
+    }
+    
+    .row-4 {
+        width: 350px;
+        top: 176px;
+    }
+    
+    .row-5 {
+        width: 485px;
+        top: 215px;
+    }
+    
+    .row-6 {
+        width: 350px;
+        bottom: 176px;
+    }
+    
+    .row-7 {
+        width: 215px;
+        bottom: 138px;
+    }
+    
+    .row-8 {
+        width: 350px;
+        bottom: 100px;
+    }
+    
+    .row-9 {
+        width: 215px;
+        bottom: 60px;
+    }
+}
+
+@media (max-width: 490px) {
+
+    .honey-comb-container {
+        height: 325px;
+    }
+
+    .honey-comb {
+        width: 68px;
+        height: 60px;
+    }
+    
+    .honey-comb img {
+        width: 55px;
+        height: 49px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        object-fit: cover;
+    }
+
+    .row-1 {
+        width: 182px;
+        top: 0px;
+    }
+    
+    .row-2 {
+        width: 295px;
+        top: 33px;
+    }
+    
+    .row-3 {
+        width: 182px;
+        top: 66px;
+    }
+    
+    .row-4 {
+        width: 295px;
+        top: 99px;
+    }
+    
+    .row-5 {
+        width: 405px;
+        top: 132px;
+    }
+    
+    .row-6 {
+        width: 295px;
+        bottom: 99px;
+    }
+    
+    .row-7 {
+        width: 182px;
+        bottom: 66px;
+    }
+    
+    .row-8 {
+        width: 295px;
+        bottom: 33px;
+    }
+    
+    .row-9 {
+        width: 182px;
+        bottom: 0px;
+    }
+}
+
+
+@media (max-width: 405px) {
+    
+    .honey-comb-container {
+        height: 255px;
+    }
+
+    
+    .honey-comb {
+        width: 56px;
+        height: 48px;
+    }
+    
+    .honey-comb img {
+        width: 45px;
+        height: 40px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        object-fit: cover;
+    }
+
+    .row-1 {
+        width: 150px;
+        top: 0px;
+    }
+    
+    .row-2 {
+        width: 245px;
+        top: 26px;
+    }
+    
+    .row-3 {
+        width: 150px;
+        top: 51px;
+    }
+    
+    .row-4 {
+        width: 245px;
+        top: 77px;
+    }
+    
+    .row-5 {
+        width: 338px;
+        top: 103px;
+    }
+    
+    .row-6 {
+        width: 245px;
+        bottom: 77px;
+    }
+    
+    .row-7 {
+        width: 150px;
+        bottom: 51px;
+    }
+    
+    .row-8 {
+        width: 245px;
+        bottom: 26px;
+    }
+    
+    .row-9 {
+        width: 150px;
+        bottom: 0px;
+    }
+}
+
+
+@media (max-width: 340px) {
+
+    .honey-comb-container {
+        height: 240px;
+    }
+
+
+    .honey-comb {
+        width: 55px;
+        height: 46px;
+    }
+    
+    .honey-comb img {
+        width: 44px;
+        height: 38px;
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        object-fit: cover;
+    }
+
+    .row-1 {
+        width: 142px;
+        top: 0px;
+    }
+    
+    .row-2 {
+        width: 228px;
+        top: 24px;
+    }
+    
+    .row-3 {
+        width: 142px;
+        top: 48px;
+    }
+    
+    .row-4 {
+        width: 228px;
+        top: 72px;
+    }
+    
+    .row-5 {
+        width: 315px;
+        top: 96px;
+    }
+    
+    .row-6 {
+        width: 228px;
+        top: 120px;
+        bottom: initial;
+    }
+    
+    .row-7 {
+        width: 142px;
+        top: 144px;
+        bottom: initial;
+    }
+    
+    .row-8 {
+        width: 228px;
+        top: 168px;
+        bottom: initial;
+    }
+    
+    .row-9 {
+        width: 142px;
+        top: 192px;
+        bottom: initial;
+    }
+}
+
+@media  (max-width: 375px) {
+
+    .instructions-card,
+    .game-over-card {
+        margin-left: 2%;
+        margin-right: 2%;
+        transform: translateY(-30px);
+    }
+
+    .instructions-card h1 {
+        text-align: center;
+        font-size: 2.3rem;
+        -webkit-text-stroke: 1px #543700;
+        margin-top: 20px;
+    }
+    
+    .instructions-card img {
+        max-width: 60%;
+    }
+    
+    .instructions-card p {
+        margin-top: 20px;
+        color: #9E8154;
+        font-size: 1.2rem;
+        width: 80%;
+    }
+    
+    .instructions-card button {
+        width: 60%;
+        height: 55px;
+        margin-bottom: 20px;
+    }
+
+    #game-over-logo {
+        width: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+
+    .game-over-card h1 {
+        font-size: 2.6rem;
+        -webkit-text-stroke: 1px #543700;
+        margin-top: 0px;
+    }
+
+    .game-over-p {
+        margin-top: 15px;
+        color: #9E8154;
+        font-size: 1.2rem;
+        width: 80%;
+    }
+
+    .game-over-score-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        max-width: 260px;
+    }
+
+    .button-container img {
+        max-width: 84px;
+    }
+
+    .button-container {
+        margin-bottom: 20px;
+    }
+
+    .your-score-wrapper h2,
+    .highscore-wrapper h2 {
+        font-size: 1.5rem;
+        -webkit-text-stroke: initial;
+    }
+
+    .your-score-wrapper p,
+    .highscore-wrapper p {
+        margin-left: 5px;
+        font-size: 1.7rem;
+        -webkit-text-stroke: initial;
+    }
+
+    .score-desktop {
+        display: none;
+    }
+
+    .score-mobile {
+        display: block;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Game Page */
+
+.header h1{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 4rem;
+}
+
+span {
+    color: #ffa600;
+}
+
+.header p{
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 500px;
+    font-size: 1.2rem;
+    color: grey;
+}
+
+section {
+    height: 70%;
+    width: 100%;
+}
+
+.game-container {
+    width: 600px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);    
+}
+
+.box {
+    max-width: 1650px;
+    width: 100%;
+    max-height: 1650px;
+    height: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer
+
+}
+
+.box:active {
+    background-color: rgba(0, 0, 0, 0.055);
+}
+
