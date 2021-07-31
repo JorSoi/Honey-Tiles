@@ -20,6 +20,7 @@ function openMobileMenuOverlay () {
 
 function clickPlay () {
     mobileMenuOverlay.style.display = 'none';
+    gameOverOverlay.style.display = 'none';
 }
 
 function clickInstructions () {
@@ -31,7 +32,7 @@ function closeInstructions () {
     clickPlay();
 }
 
-// gameOverOverlay.style.display = 'flex';
+
 
 
 

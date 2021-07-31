@@ -25,7 +25,7 @@
     <div id="mobile-menu-overlay">
         <div class="mobile-overlay-button-wrapper">
             <img id="rankings-comb" class="rankings-comb-menu" src="assets/rankings-comb.svg" alt="">
-            <img id="play-comb" class="play-comb-menu" src="assets/play-comb.svg" alt="">
+            <img id="play-comb" class="play-comb-menu" onclick="clickPlay()" src="assets/play-comb.svg" alt="">
             <img id="settings-comb" class="settings-comb-menu" src="assets/settings-comb.svg" alt="">
             <img id="instructions-comb" class="instructions-comb-menu" src="assets/instructions-comb.svg" alt="">
         </div>
@@ -44,13 +44,13 @@
         <div class="game-over-card">
             <img id="game-over-logo" src="assets/logo.png" alt="">
             <h1>Game Over!</h1>
-            <p class="game-over-p">Oupsi... You have pressed the wrong tile. Let's try it again! 🐝</p>
+            <p class="game-over-p"></p>
             <div class="game-over-score-wrapper">
                 <h4>Your Score:</h4>
-                <p id="score-number" class="game-over-score">0</p>
+                <p class="game-over-score score-number">0</p>
             </div>
             <div class="button-container">
-                <img id="play-comb" class="play-comb" src="assets/play-comb.svg" alt="">
+                <img id="play-comb" class="play-comb" onclick="playAgain()" src="assets/play-again-comb.svg" alt="">
                 <img id="rankings-comb" class="rankings-comb" src="assets/rankings-comb.svg" alt="">
                 <img id="settings-comb" class="settings-comb" src="assets/settings-comb.svg" alt="">
             </div>
@@ -78,7 +78,7 @@
              <div class="your-score-wrapper">
                  <h2 class="score-desktop">Your Score:</h2>
                  <h2 class="score-mobile">Score:</h2>
-                 <p id="score-number">0</p>
+                 <p class="score-number">0</p>
              </div>
 
              <div class="highscore-wrapper">
