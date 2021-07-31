@@ -40,7 +40,8 @@ body {
 /* Overlay styling */
 #mobile-menu-overlay,
 #instructions-overlay,
-#game-over-overlay {
+#game-over-overlay,
+#game-countdown-overlay {
     width: 100vw;
     height: 100vh;
     background-color: #221700be;
@@ -49,6 +50,13 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
+}
+
+#countdown-number {
+    font-size: 12rem;
+    font-weight: 700;
+    color: #ffa600;
+    -webkit-text-stroke: 10px #ffa600;
 }
 
 .mobile-overlay-button-wrapper {
@@ -335,6 +343,10 @@ nav {
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     cursor: pointer;
     pointer-events: initial;
+}
+
+.honey-comb:active {
+    background-color: #b97900;
 }
 
 .honey-comb img {
