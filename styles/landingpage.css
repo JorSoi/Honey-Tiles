@@ -211,6 +211,10 @@ button:active {
     background-color: #774d00;
 }
 
+.credentials-container {
+    margin-bottom: 30px;
+}
+
 .credentials-container p {
     text-align: center;
     font-size: 1.1rem;
@@ -220,8 +224,8 @@ button:active {
     margin-right: 5%;
 }
 
-.credentials-container {
-    margin-bottom: 30px;
+.credentials-container a {
+    color: rgb(0, 0, 0);
 }
 
 

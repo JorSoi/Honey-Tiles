@@ -1,10 +1,12 @@
 const scoreNumber = document.querySelectorAll('.score-number');
+const errorSound = new Audio('assets/error.mp3');
+const clickSound = new Audio('assets/click.mp3');
+const countDownSound = new Audio('assets/countdownSound.wav');
 let i = 0;
 let countColoredBoxes = 0;
 let scoreCounter = 0;
 let highScoreCounter = 0;
 let interval;
-
 
 
 
@@ -37,6 +39,7 @@ function checkRedBoxCount () {
 
 // Check which DOM element got triggered and compares it to colored tile.
 function checkUserClick (combId) {
+    clickSound.play();
     if(combId === i ){
         document.getElementById(`img${i}`).src = 'https://jorsoi.github.io/Honey-Tiles/assets/yellow.svg';
         console.log('You hit the target');
@@ -64,7 +67,10 @@ function startGame () {
 // actions being initialized if there is more than 1 red button colored.
 function gameOver () {
     
-    setTimeout(() => {document.getElementById('game-over-overlay').style.display = 'flex'}, 1000);
+    setTimeout(() => {
+        document.getElementById('game-over-overlay').style.display = 'flex';
+        errorSound.play();
+    }, 1000);
     clearInterval(interval);
 }
 
@@ -91,6 +97,7 @@ function checkIfHighscore () {
 
 function countdown () {
     document.getElementById('game-countdown-overlay').style.display = 'flex';
+    countDownSound.play();
     let countDownwards = 3;
     let countdownInterval = setInterval(() => {
         if(countDownwards > 1) {
@@ -101,9 +108,9 @@ function countdown () {
             document.getElementById('game-countdown-overlay').style.display = 'none';
             startGame();
         }
-    }, 1300) 
+    }, 1000) 
 }
 
-countdown();
+document.onload = countdown();
 
 

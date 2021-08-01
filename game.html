@@ -21,6 +21,7 @@
 
 
 <body>
+    <audio id="background-music" src="assets/background-music.mp3" autoplay loop></audio>
 
     <div id="game-countdown-overlay">
         <h1 id="countdown-number">3</h1>
@@ -30,7 +31,7 @@
         <div class="mobile-overlay-button-wrapper">
             <img id="rankings-comb" class="rankings-comb-menu" src="assets/rankings-comb.svg" alt="">
             <img id="play-comb" class="play-comb-menu" onclick="clickPlay()" src="assets/play-comb.svg" alt="">
-            <img id="settings-comb" class="settings-comb-menu" src="assets/settings-comb.svg" alt="">
+            <img id="settings-comb" class="settings-comb-menu" onclick="openSettings()" src="assets/settings-comb.svg" alt="">
             <img id="instructions-comb" class="instructions-comb-menu" src="assets/instructions-comb.svg" alt="">
         </div>
     </div>
@@ -41,6 +42,29 @@
             <img src="assets/instructions.png" alt="">
             <p>Tap on the colored tiles as quick as you can.</p>
             <button id="instructions-button">Got it!</button>
+        </div>
+    </div>
+
+    <div id="settings-overlay">
+        <div class="settings-card">
+            <h1>Settings</h1>
+            <div class="difficulty-wrapper">
+                <h4>Difficulty</h4>
+                <label for="difficulty">Easy</label>
+                <input id="difficulty" type="range"  min="0" max="4" step="1" value="2">
+                <label for="difficulty">Hard</label>
+            </div>
+            <div class="volume-wrapper">
+                <h4>Volume</h4>
+                <label for="volume">Quiet</label>
+                <input id="volume" type="range"  min="0" max="1" step="0.01" value="0.5">
+                <label for="volume">Loud</label>
+            </div>
+            <div class="button-container settings">
+                <img id="play-comb" class="play-comb" onclick="closeSettings()" src="assets/play-comb.svg" alt="">
+                <img id="rankings-comb" class="rankings-comb" src="assets/rankings-comb.svg" alt="">
+            </div>
+
         </div>
     </div>
 
@@ -67,7 +91,7 @@
             <img id="logo" src="assets/logo.png" onclick="location.href='index.html';" alt="honey tiles logo">
             <div class="inner-nav-wrapper">
                 <img id="instructions" class="instructions-icon" src="assets/instructions.svg" alt="instructions">
-                <img id="settings" class="settings-icon"src="assets/settings.svg" alt="settings">
+                <img id="settings" class="settings-icon" onclick="openSettings()" src="assets/settings.svg" alt="settings">
                 <div id="hamburger-menu">
                     <div class="line-1"></div>
                     <div class="line-2"></div>
