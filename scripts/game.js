@@ -90,8 +90,10 @@ function checkIfHighscore () {
         if (highScoreCounter <= scoreCounter) {
             highScoreCounter = scoreCounter;
             document.getElementById('highscore-number').innerHTML = highScoreCounter;
+            document.getElementById('this-user-highscore').innerHTML = highScoreCounter;
         } else {
             document.getElementById('highscore-number').innerHTML = highScoreCounter; 
+            document.getElementById('this-user-highscore').innerHTML = highScoreCounter;
         }
 }
 
@@ -110,7 +112,5 @@ function countdown () {
         }
     }, 1000) 
 }
-
-document.onload = countdown();
 
 

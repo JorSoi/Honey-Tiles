@@ -17,11 +17,12 @@
     <!-- Scripts -->
     <script src="scripts/game.js" defer></script>
     <script src="scripts/navigations.js" defer></script>
+    <script src="scripts/music.js" defer></script>
 </head>
 
 
 <body>
-    <audio id="background-music" src="assets/background-music.mp3" autoplay loop></audio>
+    <audio id="background-music" src="" autoplay loop></audio>
 
     <div id="game-countdown-overlay">
         <h1 id="countdown-number">3</h1>
@@ -29,10 +30,10 @@
 
     <div id="mobile-menu-overlay">
         <div class="mobile-overlay-button-wrapper">
-            <img id="rankings-comb" class="rankings-comb-menu" src="assets/rankings-comb.svg" alt="">
-            <img id="play-comb" class="play-comb-menu" onclick="clickPlay()" src="assets/play-comb.svg" alt="">
-            <img id="settings-comb" class="settings-comb-menu" onclick="openSettings()" src="assets/settings-comb.svg" alt="">
-            <img id="instructions-comb" class="instructions-comb-menu" src="assets/instructions-comb.svg" alt="">
+            <img id="rankings-comb" class="rankings-comb-menu" onclick="openRankings(false)" src="assets/rankings-comb.svg" alt="">
+            <img id="play-comb" class="play-comb-menu" onclick="closeMobileMenuOverlay()" src="assets/play-comb.svg" alt="">
+            <img id="settings-comb" class="settings-comb-menu" onclick="openSettings(false)" src="assets/settings-comb.svg" alt="">
+            <img id="instructions-comb" class="instructions-comb-menu" onclick="openInstructions(false)" src="assets/instructions-comb.svg" alt="">
         </div>
     </div>
 
@@ -41,7 +42,9 @@
             <h1>Instructions</h1>
             <img src="assets/instructions.png" alt="">
             <p>Tap on the colored tiles as quick as you can.</p>
-            <button id="instructions-button">Got it!</button>
+            <button id="instructions-button-mobile" onclick="closeInstructions(false)">Got it!</button>
+            <button id="instructions-button-nav" onclick="closeInstructions(true)">Got it!</button>
+            <button id="instructions-button-init" onclick="closeInstructionsInitializeGame()">Got it!</button>
         </div>
     </div>
 
@@ -60,11 +63,46 @@
                 <input id="volume" type="range"  min="0" max="1" step="0.01" value="0.5">
                 <label for="volume">Loud</label>
             </div>
-            <div class="button-container settings">
-                <img id="play-comb" class="play-comb" onclick="closeSettings()" src="assets/play-comb.svg" alt="">
-                <img id="rankings-comb" class="rankings-comb" src="assets/rankings-comb.svg" alt="">
+            <div class="sound-selection-wrapper">
+                <button id="child-mode" onclick="activateChildMode()">Child Mode</button>
+                <button id="adult-mode" onclick="activateAdultMode()">Adult Mode</button>
             </div>
+            <img id="back-mobile-settings" class="back-comb settings" onclick="closeSettings(false)" src="assets/back-comb.svg">
+            <img id="back-nav-settings" class="back-comb settings" onclick="closeSettings(true)" src="assets/back-comb.svg">
+        </div>
+    </div>
 
+    <div id="rankings-overlay">
+        <div class="rankings-card">
+            <h1>Rankings</h1>
+            <img src="assets/rankings-image.svg" alt="">
+            <div class="rankings-wrapper">
+                <div class="rank-numbers">
+                    <h4>Rank</h4>
+                    <h5>1.</h5>
+                    <h5>2.</h5>
+                    <h5>3.</h5>
+                    <h5>4.</h5>
+                </div>
+
+                <div class="rank-users">
+                    <h4>Users</h4>
+                    <p id="this-user">This User</p>
+                    <p>----</p>
+                    <p>----</p>
+                    <p>----</p>
+                </div>
+
+                <div class="rank-scores">
+                    <h4>Score</h4>
+                    <p id="this-user-highscore">--</p>
+                    <p>--</p>
+                    <p>--</p>
+                    <p>--</p>
+                </div>
+            </div>
+            <img id="back-mobile-rankings" class="back-comb rankings" onclick="closeRankings(false)" src="assets/back-comb.svg">
+            <img id="back-nav-rankings" class="back-comb rankings" onclick="closeRankings(true)" src="assets/back-comb.svg">
         </div>
     </div>
 
@@ -79,20 +117,20 @@
             </div>
             <div class="button-container">
                 <img id="play-comb" class="play-comb" onclick="startGame()" src="assets/play-again-comb.svg" alt="">
-                <img id="rankings-comb" class="rankings-comb" src="assets/rankings-comb.svg" alt="">
-                <img id="settings-comb" class="settings-comb" src="assets/settings-comb.svg" alt="">
+                <img id="rankings-comb" class="rankings-comb" onclick="openRankings(false)" src="assets/rankings-comb.svg" alt="">
+                <img id="settings-comb" class="settings-comb" onclick="openSettings(false)" src="assets/settings-comb.svg" alt="">
             </div>
         </div>
     </div>
 
     <nav>
         <div class="nav-container">
-            <img id="rankings" class="rankings-icon" src="assets/rankings.svg" alt="rankings">
+            <img id="rankings" class="rankings-icon" onclick="openRankings(true)" src="assets/rankings.svg" alt="rankings">
             <img id="logo" src="assets/logo.png" onclick="location.href='index.html';" alt="honey tiles logo">
             <div class="inner-nav-wrapper">
-                <img id="instructions" class="instructions-icon" src="assets/instructions.svg" alt="instructions">
-                <img id="settings" class="settings-icon" onclick="openSettings()" src="assets/settings.svg" alt="settings">
-                <div id="hamburger-menu">
+                <img id="instructions" class="instructions-icon" onclick="openInstructions(true)" src="assets/instructions.svg" alt="instructions">
+                <img id="settings" class="settings-icon" onclick="openSettings(true)" src="assets/settings.svg" alt="settings">
+                <div id="hamburger-menu" onclick="openMobileMenuOverlay()">
                     <div class="line-1"></div>
                     <div class="line-2"></div>
                     <div class="line-3"></div>
@@ -220,6 +258,6 @@
     </section>
 
 
-
+    <img id="kermit-stripper" src="assets/kermit-stripper.gif">
 </body>
 </html>
