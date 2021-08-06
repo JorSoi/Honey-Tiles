@@ -11,7 +11,6 @@ const rankingsOverlay = document.getElementById('rankings-overlay');
 
 const gameOverOverlay = document.getElementById('game-over-overlay');
 
-const difficultySlider = document.getElementById('difficulty');
 const volumeSlider = document.getElementById('volume');
 
 
@@ -98,7 +97,7 @@ function closeRankings (isNavButton) {
 }
 
 function continueGame () {
-    interval = setInterval(pickRandomBox, 1000); 
+    startGame();
 }
 
 
