@@ -9,16 +9,18 @@ let scoreCounter = 0;
 let highScoreCounter = 0;
 let interval;
 let difficultyLevel = parseInt(difficultySlider.value, 10);
-
+let difficultyCounter = 0; //Counts how many red tiles flashed up in a game.
 
 
 // Fill one of the boxes in the given color randomly.
 function pickRandomBox() {
+    console.log(performance.now());
     i = Math.floor(Math.random()*23);
     document.getElementById(`img${i}`).src = 'https://jorsoi.github.io/Honey-Tiles/assets/red.svg';
     checkRedBoxCount();
+    difficultyCounter += 1;
+    checkForDifficultyIncrease();
 }
-
 
 
 // Ensures only one box is colored red, else gameover.
@@ -30,7 +32,7 @@ function checkRedBoxCount () {
     }
 
     if(countColoredBoxes > 1) {
-        console.log('you were too slow');
+        // console.log('you were too slow');
         document.querySelector('.game-over-p').innerHTML = "Oh dear! ... You have probably overseen a tile. Let's try it again! 🐝";
         gameOver();
     } else {
@@ -44,35 +46,26 @@ function checkUserClick (combId) {
     clickSound.play();
     if(combId === i ){
         document.getElementById(`img${i}`).src = 'https://jorsoi.github.io/Honey-Tiles/assets/yellow.svg';
-        console.log('You hit the target');
+        // console.log('You hit the target');
         scoreCounter += 1;
         scoreNumber.forEach(a => {a.innerHTML = `${scoreCounter}`}); 
         checkIfHighscore();
-        checkForDifficultyIncrease();
     } else {
         document.querySelector('.game-over-p').innerHTML = "Oupsi... You have pressed something wrong. Let's try it again! 🐝";
-        console.log('you did not hit the target');
+        // console.log('you did not hit the target');
         gameOver();
     }
 }
 
 
-
-
-
- 
-
-// Initializes Game.
+// Initialize Game.
 function startGame () {
-
     applyDifficulty(difficultyLevel);
     
 }
 
 
-
-
-// actions being initialized if there is more than 1 red button colored.
+// Display Gameover and clear Interval
 function gameOver () {
     
     setTimeout(() => {
@@ -82,7 +75,8 @@ function gameOver () {
     clearInterval(interval);
 }
 
-// Reset tile-colors and game score and clears interval after each game.
+
+// Reset anything that has to be resetted.
 function resetPreviousGame () {
     clearInterval(interval);
     countColoredBoxes = 0;
@@ -90,8 +84,10 @@ function resetPreviousGame () {
         document.getElementById(`img${d}`).src = 'https://jorsoi.github.io/Honey-Tiles/assets/yellow.svg';
     }
     scoreCounter = 0;
+    difficultyCounter = 0;
     scoreNumber.forEach(a => {a.innerHTML = `${scoreCounter}`}); 
 }
+
 
 // If current score > highscore make current score highscore.
 function checkIfHighscore () {
@@ -105,6 +101,8 @@ function checkIfHighscore () {
         }
 }
 
+
+// Initializes Countdown, resets previous game and starts the game.
 function countdown () {
     resetPreviousGame();
     document.getElementById('game-countdown-overlay').style.display = 'flex';
@@ -124,63 +122,23 @@ function countdown () {
     }, 1000) 
 }
 
-
-
-function intervalSpeed (speed) {
-    interval = setInterval(pickRandomBox, speed)
-}
-
+// Listen to changes in difficulty at the setting's difficultySlider.
 difficultySlider.addEventListener("change", (e) => {
     difficultyLevel = parseInt(e.target.value, 10);
 })
 
-function checkForDifficultyIncrease () {
-    switch (scoreCounter) {
-        case 5:
-            applyDifficulty(difficultyLevel + 1);
-            break;
-        case 10:
-            applyDifficulty(difficultyLevel + 2);
-            break;
-        case 15:
-            applyDifficulty(difficultyLevel + 3);
-            break;
-        case 20:
-            applyDifficulty(difficultyLevel + 4);
-            break;
-        case 25:
-            applyDifficulty(difficultyLevel + 5);
-            break;
-        case 30:
-            applyDifficulty(difficultyLevel + 6);
-            break;
-        case 35:
-            applyDifficulty(difficultyLevel + 7);
-            break;
-        case 40:
-            applyDifficulty(difficultyLevel + 8);
-            break;
-        case 45:
-            applyDifficulty(difficultyLevel + 9);
-            break;
-        case 50:
-            applyDifficulty(difficultyLevel + 10);
-            break;
-        case 55:
-            applyDifficulty(difficultyLevel + 11);
-            break;
-        case 60:
-            applyDifficulty(difficultyLevel + 12);
-            break;
-        case 45:
-            applyDifficulty(difficultyLevel + 13);
-            break;
-    }
+
+// Determine interval speed by getting instructions from applyDifficulty.
+function intervalSpeed (speed) {
+    interval = setInterval(pickRandomBox, speed)
 }
 
+
+// Set the intervalSpeed by listening to checkforDifficultyIncrease.
 function applyDifficulty (no) {
     switch (no) {
         case 0:
+            console.log('Difficulty 0 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(2500);
             break;
@@ -201,6 +159,7 @@ function applyDifficulty (no) {
             intervalSpeed(2100);
             break;
         case 5:
+            console.log('Difficulty 5 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(2000);
             break;
@@ -226,22 +185,27 @@ function applyDifficulty (no) {
             intervalSpeed(1500);
             break;
         case 11:
+            console.log('Difficulty 11 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(1400);
             break;
         case 12:
+            console.log('Difficulty 12 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(1300);
             break;
         case 13:
+            console.log('Difficulty 13 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(1200);
             break;
         case 14:
+            console.log('Difficulty 14 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(1100);
             break;
         case 15:
+            console.log('Difficulty 15 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(1000);
             break;
@@ -262,6 +226,7 @@ function applyDifficulty (no) {
             intervalSpeed(800);
             break;
         case 20:
+            console.log('Difficulty 20 was sucessfully applied')
             clearInterval(interval);
             intervalSpeed(750);
             break;
@@ -305,5 +270,63 @@ function applyDifficulty (no) {
             clearInterval(interval);
             intervalSpeed(425);
             break;                 
+    }
+}
+
+
+// Check's difficultyCounter and give applyDifficulty the appropriate difficultyLevel to execute.
+function checkForDifficultyIncrease () {
+    switch (difficultyCounter) {
+        case 5:
+            applyDifficulty(difficultyLevel + 1);
+            break;
+        case 10:
+            applyDifficulty(difficultyLevel + 2);
+            break;
+        case 15:
+            applyDifficulty(difficultyLevel + 3);
+            break;
+        case 20:
+            applyDifficulty(difficultyLevel + 4);
+            break;
+        case 25:
+            applyDifficulty(difficultyLevel + 5);
+            break;
+        case 30:
+            applyDifficulty(difficultyLevel + 6);
+            break;
+        case 35:
+            applyDifficulty(difficultyLevel + 7);
+            break;
+        case 40:
+            applyDifficulty(difficultyLevel + 8);
+            break;
+        case 45:
+            applyDifficulty(difficultyLevel + 9);
+            break;
+        case 50:
+            applyDifficulty(difficultyLevel + 10);
+            break;
+        case 55:
+            applyDifficulty(difficultyLevel + 11);
+            break;
+        case 60:
+            applyDifficulty(difficultyLevel + 12);
+            break;
+        case 65:
+            applyDifficulty(difficultyLevel + 13);
+            break;
+        case 70:
+            applyDifficulty(difficultyLevel + 14);
+            break;
+        case 75:
+            applyDifficulty(difficultyLevel + 15);
+            break;
+        case 80:
+            applyDifficulty(difficultyLevel + 16);
+            break;
+        case 85:
+            applyDifficulty(difficultyLevel + 17);
+            break;
     }
 }
